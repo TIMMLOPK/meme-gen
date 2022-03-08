@@ -1,8 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #071739;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background: url("../public/box.png") repeat 0 0;
+  animation: background-scroll 6s infinite;
+  animation-timing-function: linear;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .meme {
   position: relative;
   width: 400px;
   margin: auto;
-
 }
 
 .meme > h2 {
@@ -19,4 +44,33 @@
   color: white;
   letter-spacing: 1px;
   text-shadow: 2px 2px 0 #000;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+@-webkit-keyframes background-scroll {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes background-scroll {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes background-scroll {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes background-scroll {
+  100% {
+    background-position: 50px 50px;
+  }
 }

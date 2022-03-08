@@ -1,22 +1,26 @@
+import { Button, Link, Grid } from "@nextui-org/react"
 import { useSession, signIn, signOut } from "next-auth/react"
 import MemeGenerator from "../component/maker"
+
 
 export default function Component() {
   const { data: session } = useSession()
   if (session) {
     return (
       <>
-        Signed in as {session.user.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
+        Sign in as {session.user.email}<br />
         <MemeGenerator />
+        <Grid css={{ display: 'flex', alignItems: 'center', }}>
+          <Button onClick={() => signOut()} >Sign out</Button>
+        </Grid>
+        <Link href="/maker" target='_blank' > Editor </Link>
       </>
-
     )
   }
   return (
     <>
       Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      <Button onClick={() => signIn()}>Sign in</Button>
     </>
   )
 }

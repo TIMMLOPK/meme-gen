@@ -83,7 +83,7 @@ const MemeGenerator = () => {
                         Download Meme
                     </Button>
                 </Grid>
-                <Grid css={{ paddingLeft: '$1' }}>
+                <Grid >
                     <Button onClick={randomMeme}>Change Photo</Button>
                 </Grid>
             </Grid.Container>
