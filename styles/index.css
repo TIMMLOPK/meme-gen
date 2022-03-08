@@ -14,7 +14,7 @@ body {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  background: url("../public/box.png") repeat 0 0;
+  background: url("/box.png") repeat 0 0;
   animation: background-scroll 6s infinite;
   animation-timing-function: linear;
   position: fixed; 
