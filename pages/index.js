@@ -7,10 +7,10 @@ const Msg = dynamic(() => import("../component/msg"), { ssr: false });
 
 export default function Component() {
   const { data: session } = useSession();
-  if (session) {
+  // if (session) {
     return (
       <>
-        Sign in as {session.user.email}
+        {/* Sign in as {session.user.email} */}
         <br />
         <MemeGenerator />
         <Grid css={{ display: "flex", alignItems: "center" }}>
@@ -24,7 +24,7 @@ export default function Component() {
         </Link>
       </>
     );
-  }
+  // }
   return (
     <>
       <b>Not signed in</b> <br />
