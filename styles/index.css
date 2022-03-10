@@ -3,31 +3,32 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  color: #071739;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  background: url("/box.png") repeat 0 0;
-  animation: background-scroll 6s infinite;
-  animation-timing-function: linear;
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  min-width: 100%;
-  min-height: 100%;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 .meme {
   position: relative;
-  width: 400px;
+  width: 50%;
   margin: auto;
+  height: 50%;
+  padding-bottom: 20px;
+}
+
+.meme > img {
+  width: 100%;
+  display: block;
 }
 
 .meme > h2 {
@@ -46,14 +47,14 @@ body {
   text-shadow: 2px 2px 0 #000;
 }
 
-.footer{
-  position: fixed;
+.footer {
+  display: block;
   left: 0;
   bottom: 0;
   width: 100%;
-  color: white;
   text-align: center;
 }
+
 @-webkit-keyframes background-scroll {
   100% {
     background-position: 50px 50px;

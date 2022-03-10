@@ -1,8 +1,8 @@
-import { NextUIProvider } from '@nextui-org/react';
-import Header from '../component/header';
-import '../styles/index.css';
-import { SessionProvider } from "next-auth/react"
-import Footer from '../component/footer';
+import { NextUIProvider } from "@nextui-org/react";
+import Header from "../component/header";
+import "../styles/index.css";
+import { SessionProvider } from "next-auth/react";
+import Footer from "../component/footer";
 
 function MyApp({ Component, pageProps, session }) {
   return (

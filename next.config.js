@@ -1,3 +1,3 @@
 module.exports = {
-    useStrict: true
-}
+  useStrict: true,
+};
