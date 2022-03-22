@@ -7,7 +7,6 @@ const MemeGenerator = () => {
   const [bottomText, setbottomText] = useState("");
   const [allMemeImgs, setallMemeImgs] = useState([]);
   const [randomImg, setrandomImg] = useState('https://i.imgflip.com/1bij.jpg');
-  const [download, setdownload] = useState(false);
 
 
   useEffect(() => {
@@ -52,9 +51,7 @@ const MemeGenerator = () => {
     });
   };
 
-  if (/iPad|iPhone/.test(navigator.userAgent) && !window.MSStream) {
-    setdownload(true);
-  }
+
   return (
     <div>
       <div id="meme" className="meme">
@@ -88,7 +85,7 @@ const MemeGenerator = () => {
           />
         </Grid>
         <Grid>
-          <Button id="capture" onClick={capture} disabled={download}>
+          <Button id="capture" onClick={capture}>
             Download Meme
           </Button>
         </Grid>
