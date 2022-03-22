@@ -1,4 +1,4 @@
-import { Button, Link, Grid } from "@nextui-org/react";
+import { Button, Link, Grid, Text, User } from "@nextui-org/react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import MemeGenerator from "../component/maker";
 import dynamic from "next/dynamic";
@@ -10,11 +10,24 @@ export default function Component() {
   if (session) {
     return (
       <>
-        Sign in as {session.user.email}
+        <User
+          src={session.user.image}
+          name={session.user.name}
+          description={session.user.email}
+          zoomed
+          bordered
+          color="success"
+          size="lg"
+        />
         <br />
         <MemeGenerator />
         <Grid css={{ display: "flex", alignItems: "center" }}>
-          <Button onClick={() => signOut()} css={{ margin: "auto" }}>
+          <Button
+            onClick={() => signOut()}
+            css={{ margin: "auto" }}
+            ghost
+            color="error"
+          >
             Sign out
           </Button>
         </Grid>
@@ -27,7 +40,7 @@ export default function Component() {
   }
   return (
     <>
-      <b>Not signed in</b> <br />
+      <Text as="b">Not signed in</Text> <br />
       <Msg />
       <Button onClick={() => signIn()} css={{ margin: "auto" }}>
         Sign in

@@ -11,7 +11,6 @@ export default NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      
     }),
   ],
   secret: "7aa31295f0c4427810abb991effaf779",

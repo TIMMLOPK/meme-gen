@@ -44,32 +44,3 @@ body {
   letter-spacing: 1px;
   text-shadow: 2px 2px 0 #000;
 }
-
-.footer {
-  display: block;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
-
-@-webkit-keyframes background-scroll {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@-moz-keyframes background-scroll {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@-o-keyframes background-scroll {
-  100% {
-    background-position: 50px 50px;
-  }
-}
-@keyframes background-scroll {
-  100% {
-    background-position: 50px 50px;
-  }
-}
