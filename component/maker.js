@@ -84,11 +84,11 @@ const MemeGenerator = () => {
             maxLength="15"
           />
         </Grid>
-          <Grid>
-            <Button id="capture" onClick={capture} >
-              Download Meme
-            </Button>
-          </Grid>
+        <Grid>
+          <Button id="capture" onClick={capture} >
+            Download Meme
+          </Button>
+        </Grid>
         <Grid>
           <Button onClick={randomMeme}>Change Photo</Button>
         </Grid>
