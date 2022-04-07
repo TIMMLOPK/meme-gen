@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import html2canvas from "html2canvas";
 import { Button, Grid, Input } from "@nextui-org/react";
-import { BrowserView } from "react-device-detect";
 
 const MemeGenerator = () => {
   const [topText, setTopText] = useState("");
@@ -85,13 +84,11 @@ const MemeGenerator = () => {
             maxLength="15"
           />
         </Grid>
-        <BrowserView>
           <Grid>
             <Button id="capture" onClick={capture} >
               Download Meme
             </Button>
           </Grid>
-        </BrowserView>
         <Grid>
           <Button onClick={randomMeme}>Change Photo</Button>
         </Grid>
