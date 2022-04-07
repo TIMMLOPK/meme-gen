@@ -9,7 +9,7 @@ export default function Footer() {
   return (
 
     <Grid.Container css={{ display: 'block', left: '0', bottom: '0', width: '100%', textAlign: 'center', marginTop: '5px' }}>
-      <Text>Timmy © All rights reserved {year}</Text>
+      <Text>© All rights reserved {year}</Text>
       <Switch
         checked={isDark}
         onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}

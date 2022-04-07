@@ -8,7 +8,7 @@ export default function Msg() {
         <Typewriter
           onInit={(typewriter) => {
             typewriter
-              .typeString("Come on create a unique meme !")
+              .typeString("Come on ! Create a unique meme !")
               .pauseFor(2500)
               .start();
           }}
