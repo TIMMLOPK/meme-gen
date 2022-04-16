@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nextui-org/react": "^1.0.8-beta.5",
+    "@nextui-org/react": "^1.0.7-beta.5",
     "@toast-ui/react-image-editor": "^3.15.2",
     "html2canvas": "^1.4.1",
     "next": "^12.1.5",
