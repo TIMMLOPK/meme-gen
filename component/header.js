@@ -6,7 +6,7 @@ const Headers = () => {
     <Grid.Container
       gap={1}
       justify="center"
-      css={{ marginBottom: "20px", marginTop: "20px" }}
+      css={{ marginBottom: "10px", marginTop: "20px" }}
     >
       <Text
         h1

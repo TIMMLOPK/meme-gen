@@ -14,7 +14,6 @@ export default function Component() {
           src={session.user.image}
           name={session.user.name}
           description={session.user.email}
-          zoomed
           bordered
           color="success"
           size="lg"
