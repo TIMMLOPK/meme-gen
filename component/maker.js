@@ -67,9 +67,9 @@ const MemeGenerator = () => {
         }
         <h2 style={{ top: "0" }}>{topText}</h2>
         <h2 style={{ bottom: "0" }}>{bottomText}</h2>
-        <Text blockquote margin='10px'>{description}</Text>
       </div>
       <Grid.Container gap={4} justify="center">
+        <Text blockquote margin='10px' css={{ alignItems: 'center', display: 'flex', height: '20%' }}>{description}</Text>
         <Grid>
           <Input
             type="text"
