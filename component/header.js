@@ -11,7 +11,7 @@ const Headers = () => {
       <Text
         h1
         css={{
-          textGradient: "45deg, $blue500 -20%, $pink500 50%",
+          textGradient: "45deg, $blue400 20%, $pink600 80%",
         }}
         weight="bold"
       >

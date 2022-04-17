@@ -1,7 +1,8 @@
-import { Button, Link, Grid, Text, User } from "@nextui-org/react";
+import { Button, Link, Grid, Text, User, Spacer } from "@nextui-org/react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import MemeGenerator from "../component/maker";
 import dynamic from "next/dynamic";
+import { RiLogoutCircleRLine } from "react-icons/ri"
 
 const Msg = dynamic(() => import("../component/msg"), { ssr: false });
 
@@ -24,8 +25,10 @@ export default function Component() {
           <Button
             onClick={() => signOut()}
             css={{ margin: "auto" }}
-            ghost
             color="error"
+            rounded
+            ghost
+            icon={<RiLogoutCircleRLine />}
           >
             Sign out
           </Button>
@@ -39,9 +42,10 @@ export default function Component() {
   }
   return (
     <>
-      <Text as="b">Not signed in</Text> <br />
+      <Text b>Not signed in</Text>
+      <Spacer />
       <Msg />
-      <Button onClick={() => signIn()} css={{ margin: "auto" }}>
+      <Button onClick={() => signIn()} css={{ margin: "auto", display: 'flex' }}>
         Sign in
       </Button>
     </>

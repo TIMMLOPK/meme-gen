@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import html2canvas from "html2canvas";
 import { Button, Grid, Input, Loading, Text } from "@nextui-org/react";
+import { TiImageOutline } from "react-icons/ti"
+import { GrPowerCycle } from "react-icons/gr"
 
 const MemeGenerator = () => {
   const [topText, setTopText] = useState("");
@@ -44,7 +46,7 @@ const MemeGenerator = () => {
     const divToDisplay = document.getElementById("meme");
     html2canvas(divToDisplay, {
       height: divToDisplay.clientHeight,
-      allowTaint: true,
+      allowTaint: false,
       useCORS: true,
       scrollY: -window.scrollY,
       scrollX: -window.scrollX,
@@ -60,16 +62,21 @@ const MemeGenerator = () => {
   return (
     <div>
       <div className="meme">
-        {loading ? (<Loading type="gradient">
+        {loading ? <Loading type="gradient">
           Loading...
-        </Loading>) :
-          (<img src={randomImg} width="100%" height="100%" id="meme" alt={description} />)
+        </Loading> :
+          <div className="meme" id="meme">
+            <img src={randomImg} width="100%" height="100%" alt={description} />
+            <h2 style={{ top: "0" }}>{topText}</h2>
+            <h2 style={{ bottom: "0" }}>{bottomText}</h2>
+          </div>
         }
-        <h2 style={{ top: "0" }}>{topText}</h2>
-        <h2 style={{ bottom: "0" }}>{bottomText}</h2>
       </div>
-      <Grid.Container gap={4} justify="center">
-        <Text blockquote margin='10px' css={{ alignItems: 'center', display: 'flex', height: '20%' }}>{description}</Text>
+      <Grid.Container gap={4} justify="center" style={{ marginTop: '20px' }}>
+        <Text blockquote margin='10px' css={{ alignItems: 'center', display: 'flex', height: '20%', background: 'transparent' }}>
+          <TiImageOutline />
+          {description}
+        </Text>
         <Grid>
           <Input
             type="text"
@@ -100,7 +107,7 @@ const MemeGenerator = () => {
           </Button>
         </Grid>
         <Grid>
-          <Button onClick={randomMeme}>Change Photo</Button>
+          <Button onClick={randomMeme} icon={<GrPowerCycle />}>Change Photo</Button>
         </Grid>
       </Grid.Container>
     </div>

@@ -21,15 +21,14 @@ body {
 .meme {
   position: relative;
   margin: auto;
-  padding-bottom: 20px;
 }
 
-.meme > img {
+.meme>img {
   width: 100%;
   display: block;
 }
 
-.meme > h2 {
+.meme>h2 {
   position: absolute;
   width: 80%;
   text-align: center;
