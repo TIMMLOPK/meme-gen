@@ -1,4 +1,4 @@
-import { Grid, Switch, Text, Tooltip, useTheme } from "@nextui-org/react";
+import { Grid, Switch, Text, useTheme } from "@nextui-org/react";
 import { useTheme as useNextTheme } from "next-themes";
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
@@ -8,7 +8,7 @@ export default function Footer() {
   const { isDark } = useTheme();
   return (
 
-    <Grid.Container css={{ display: 'block', position: 'fixed', left: '0', bottom: '0', width: '100%', textAlign: 'center', marginTop: '5px' }}>
+    <Grid.Container css={{ display: 'block', width: '100%', textAlign: 'center', marginTop: '5px' }}>
       <Grid>
         <Text>© All rights reserved {year}</Text>
       </Grid>
