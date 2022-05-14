@@ -33,10 +33,6 @@ export default function Component() {
             Sign out
           </Button>
         </Grid>
-        <Link href="/maker" target="_blank" block>
-          {" "}
-          Editor{" "}
-        </Link>
       </>
     );
   }
