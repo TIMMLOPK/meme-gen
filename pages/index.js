@@ -1,4 +1,4 @@
-import { Button, Link, Grid, Text, User, Spacer } from "@nextui-org/react";
+import { Button, Tooltip, Grid, Text, User, Spacer } from "@nextui-org/react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import MemeGenerator from "../component/maker";
 import dynamic from "next/dynamic";
