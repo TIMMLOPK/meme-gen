@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import html2canvas from "html2canvas";
-import { Button, Grid, Input, Loading, Text } from "@nextui-org/react";
-import { TiImageOutline } from "react-icons/ti"
-import { GrPowerCycle } from "react-icons/gr"
+import {
+  Button,
+  Grid,
+  Input,
+  Loading,
+  Card,
+  Text,
+  Row,
+} from "@nextui-org/react";
 
 const MemeGenerator = () => {
   const [topText, setTopText] = useState("");
   const [bottomText, setbottomText] = useState("");
   const [allMemeImgs, setallMemeImgs] = useState([]);
-  const [randomImg, setRandomImg] = useState('https://i.imgflip.com/1bij.jpg');
+  const [randomImg, setRandomImg] = useState("https://i.imgflip.com/1bij.jpg");
   const [loading, setloading] = useState(true);
   const [description, setdescription] = useState("");
 
@@ -60,23 +66,19 @@ const MemeGenerator = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <div className="meme">
-        {loading ? <Loading type="gradient">
-          Loading...
-        </Loading> :
+        {loading ? (
+          <Loading type="gradient">Loading...</Loading>
+        ) : (
           <div className="meme" id="meme">
             <img src={randomImg} width="100%" height="100%" alt={description} />
             <h2 style={{ top: "0" }}>{topText}</h2>
             <h2 style={{ bottom: "0" }}>{bottomText}</h2>
           </div>
-        }
+        )}
       </div>
-      <Grid.Container gap={4} justify="center" style={{ marginTop: '20px' }}>
-        <Text blockquote margin='10px' css={{ alignItems: 'center', display: 'flex', height: '20%', background: 'transparent' }}>
-          <TiImageOutline />
-          {description}
-        </Text>
+      <Grid.Container gap={4} justify="center" css={{ marginTop: "20px" }}>
         <Grid>
           <Input
             type="text"
@@ -101,14 +103,22 @@ const MemeGenerator = () => {
             maxLength="15"
           />
         </Grid>
-        <Grid>
-          <Button id="capture" onClick={capture} >
-            Download Meme
-          </Button>
-        </Grid>
-        <Grid>
-          <Button onClick={randomMeme} icon={<GrPowerCycle />}>Change Photo</Button>
-        </Grid>
+        <Card css={{ mw: "300px" }}>
+          <Card.Body>
+            <Text>{description}</Text>
+          </Card.Body>
+          <Card.Divider />
+          <Card.Footer>
+            <Row justify="flex-end">
+              <Button size="sm" light onClick={randomMeme}>
+                Random
+              </Button>
+              <Button size="sm" light onClick={capture}>
+                Download
+              </Button>
+            </Row>
+          </Card.Footer>
+        </Card>
       </Grid.Container>
     </div>
   );
