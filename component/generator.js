@@ -9,6 +9,7 @@ import {
   Text,
   Row,
 } from "@nextui-org/react";
+import useSWR from "swr";
 
 const MemeGenerator = () => {
   const [topText, setTopText] = useState("");
@@ -17,29 +18,32 @@ const MemeGenerator = () => {
   const [randomImg, setRandomImg] = useState("https://i.imgflip.com/1bij.jpg");
   const [loading, setloading] = useState(true);
   const [description, setdescription] = useState("");
+  const { data } = useSWR("https://api.imgflip.com/get_memes", (url) => {
+    return fetch(url).then((res) => res.json());
+  });
 
   useEffect(() => {
-    fetch("https://api.imgflip.com/get_memes")
-      .then((response) => response.json())
-      .then((response) => {
-        const { memes } = response.data;
-        setallMemeImgs(memes);
-        setdescription(memes[0].name);
-      })
-      .then(() => setloading(false));
-  }, []);
+    if (data) {
+      const { memes } = data.data;
+      setallMemeImgs(memes);
+      setdescription(memes[0].name);
+      setloading(false);
+    }
+  }, [data]);
 
-  const handleChange1 = (event) => {
+  const handleTopChange = (event) => {
     const v = event.target.value;
     setTopText(v);
   };
-  const handleChange2 = (event) => {
+  const handleBottomChange = (event) => {
     const v = event.target.value;
     setbottomText(v);
   };
 
-  const randomMeme = (event) => {
-    event.preventDefault();
+  const randomMeme = () => {
+    if (allMemeImgs.length === 0) {
+      return;
+    }
     let items = allMemeImgs;
     let item = items[Math.floor(Math.random() * items.length)];
     setRandomImg(item.url);
@@ -85,7 +89,7 @@ const MemeGenerator = () => {
             name="topText"
             labelPlaceholder="Top Text"
             value={topText}
-            onChange={handleChange1}
+            onChange={handleTopChange}
             clearable
             underlined
             maxLength="15"
@@ -98,7 +102,7 @@ const MemeGenerator = () => {
             name="bottomText"
             labelPlaceholder="Bottom Text"
             value={bottomText}
-            onChange={handleChange2}
+            onChange={handleBottomChange}
             underlined
             maxLength="15"
           />
