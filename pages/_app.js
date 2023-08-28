@@ -1,36 +1,18 @@
-import { NextUIProvider, createTheme } from "@nextui-org/react";
-import Header from "../component/header";
-import "../styles/index.css";
-import { SessionProvider } from "next-auth/react";
-import Footer from "../component/footer";
+import Header from "../components/header";
+import "../styles/global.css";
+import Footer from "../components/footer";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { NextUIProvider } from "@nextui-org/react";
 
-const lightTheme = createTheme({
-  type: "light",
-});
-
-const darkTheme = createTheme({
-  type: "dark",
-});
-
-function MyApp({ Component, pageProps, session }) {
+function MyApp({ Component, pageProps }) {
   return (
-    <SessionProvider session={session}>
-      <NextThemesProvider
-        defaultTheme="system"
-        attribute="class"
-        value={{
-          light: lightTheme.className,
-          dark: darkTheme.className,
-        }}
-      >
-        <NextUIProvider>
-          <Header />
-          <Component {...pageProps} />
-          <Footer />
-        </NextUIProvider>
+    <NextUIProvider>
+      <NextThemesProvider>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
       </NextThemesProvider>
-    </SessionProvider>
+    </NextUIProvider>
   );
 }
 
