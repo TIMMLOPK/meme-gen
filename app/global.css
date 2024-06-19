@@ -4,17 +4,9 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100;1,400&display=swap");
 
-.meme > img {
-  width: 50%;
-  height: auto;
-  border-radius: 10px;
-}
-
 .memeText {
   position: absolute;
-  width: 80%;
   text-align: center;
-  left: 50%;
   transform: translateX(-50%);
   margin: 15px 0;
   padding: 0 5px;
